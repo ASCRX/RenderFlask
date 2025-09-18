@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: labelstudio-autoscore
+    env: python
+    plan: free
+    autoDeploy: true
+    buildCommand: ""
+    startCommand: python app.py
+    envVars:
+      - key: LS_URL
+        sync: false   # 在 Render 仪表盘里填，例如 https://your-ls-space.hf.space
+      - key: LS_API_KEY
+        sync: false   # 在 Render 仪表盘里填：Label Studio 的 API Token
